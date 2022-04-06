@@ -1,0 +1,41 @@
+.ball {
+    width: 70px;
+    height: 70px;
+    border: 5px solid black;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.square {
+    width: 80px;
+    height: 80px;
+    padding: 0;
+}
+
+.square section {
+    height: 5px;
+    width: 80px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.square section:nth-child(1) {
+    transform: rotate(-45deg);
+    margin-top: 38px;
+    
+}
+
+.square section:nth-child(2) {
+    margin-top: -5px;
+    transform: rotate(45deg);
+} 
+
+.ball:hover {
+    transform: scale(1.10);
+    transition: 0.5s ease-in;
+}
+
+.square:hover {
+    transform: scale(1.10);
+    transition: 0.5s ease-in;
+}

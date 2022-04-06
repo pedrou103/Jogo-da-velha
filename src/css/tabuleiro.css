@@ -1,0 +1,89 @@
+.content {
+    display: flex;
+    width: 80%;
+    height: 90vh;
+    background-color: white;
+}
+
+#left {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+#right {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+#center {
+    height: 100%;
+    width: 60%;
+    border: 1px solid black;
+    display: grid;
+    grid-template-areas: 'one two tree'
+    'four five six'
+    'seven eight nine';
+}
+
+.one{
+    grid-area: one;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+}
+.two{
+    grid-area: two;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+}
+.tree{
+    grid-area: tree;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+}
+.four{
+    grid-area: four;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+}
+.five{
+    grid-area: five;
+    border: 3px solid black;
+}
+.six{
+    grid-area: six;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+}
+.seven{
+    grid-area: seven;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+}
+.eight{
+    grid-area: eight;
+    border-left: 3px solid black;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+}
+.nine{
+    grid-area: nine;
+    border-left: 3px solid black;
+    border-top: 3px solid black;
+}

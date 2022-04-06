@@ -1,0 +1,16 @@
+@media (max-width:750px) {
+    .content {
+        height: 70vh;
+        width: 90%;
+    }
+
+    .ball {
+        width: 60px;
+        height: 60px;
+    }
+
+    .square section {
+        height: 5px;
+        width: 80px;
+    }
+}
