@@ -39,3 +39,8 @@
     transform: scale(1.10);
     transition: 0.5s ease-in;
 }
+
+.is-dragging {
+    cursor: move;
+    opacity: 0.3;
+}

@@ -34,6 +34,8 @@
     width: 60%;
     border: 1px solid black;
     display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 'one two tree'
     'four five six'
     'seven eight nine';
@@ -86,4 +88,10 @@
     grid-area: nine;
     border-left: 3px solid black;
     border-top: 3px solid black;
+}
+
+.dropzone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
