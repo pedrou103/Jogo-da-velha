@@ -13,24 +13,25 @@
 </head>
 <body>
     
-    <div class="container">
+    <section class="container">
         <div class="content">
             <div id="left"></div>
-            <div id="center">
-                <div class="dropzone one"></div>
-                <div class="dropzone two"></div>
-                <div class="dropzone tree"></div>
-                <div class="dropzone four"></div>
-                <div class="dropzone five"></div>
-                <div class="dropzone six"></div>
-                <div class="dropzone seven"></div>
-                <div class="dropzone eight"></div>
-                <div class="dropzone nine"></div>
+            <div id="board">
+                <div class="dropzone one" data-col="0" data-row="0"></div>
+                <div class="dropzone two" data-col="1" data-row="0"></div>
+                <div class="dropzone tree" data-col="2" data-row="0"></div>
+                <div class="dropzone four" data-col="0" data-row="1"></div>
+                <div class="dropzone five" data-col="1" data-row="1"></div>
+                <div class="dropzone six" data-col="2" data-row="1"></div>
+                <div class="dropzone seven" data-col="0" data-row="2"></div>
+                <div class="dropzone eight" data-col="1" data-row="2"></div>
+                <div class="dropzone nine" data-col="2" data-row="2"></div>
             </div>
             <div id="right"></div>
         </div>
-    </div>
+    </section>
 
-    <script src="/src/js/script-front.js" onload="butons()"></script>
+    <script src="/src/js/script-pecas.js"></script>
+    <script src="/src/js/script-front.js"></script>
 </body>
 </html>

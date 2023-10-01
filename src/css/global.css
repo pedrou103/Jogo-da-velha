@@ -1,13 +1,17 @@
+:root {
+    --white : #F2F5F9;
+}
+
 body {
-    background-color: grey;
+    background: linear-gradient(247deg, #0F125F 20.06%, #F52D59 100%);
 }
 
 .container {
-    width: 100vw;
+    max-width: 1400px;
+    margin: 0 auto;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
 }
 
 .ball, .square {

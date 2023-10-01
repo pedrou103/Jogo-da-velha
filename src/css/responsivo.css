@@ -1,16 +1,43 @@
-@media (max-width:750px) {
+@media (max-width:576px) {
+    #board {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+@media (max-width:992px) {
     .content {
-        height: 60vh;
-        width: 90%;
+        display: grid;
+        place-items: center;
+        gap: 50px;
+        grid-template-areas: 'board board'
+        'left right';
     }
 
-    .ball {
-        width: 60px;
-        height: 60px;
+    #left {
+        grid-area: left;
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 14px;
     }
 
-    .square section {
-        height: 5px;
-        width: 80px;
+    #right {
+        grid-area: right;
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 14px;
+    }
+    
+    #board {
+        grid-area: board;
+    }
+
+    .pieces img {
+        width: 50px;
+        height: 50px;
     }
 }

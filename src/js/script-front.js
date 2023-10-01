@@ -1,80 +1,87 @@
-function butons() {
-    let left = document.getElementById('left');
-    let right = document.getElementById('right');
+var positions = [
+    [
+        ['a'], ['b'], ['c']
+    ], [
+        ['d'], ['e'], ['f']
+    ], [
+        ['g'], ['h'], ['i']
+    ]
+];
 
-    for (let i = 0; i <= 4; i++) {
-        const section = document.createElement("section");
-        section.classList.add("ball");
-        section.classList.add("pecas")
-        left.appendChild(section);
-        section.setAttribute("draggable", "true");
-    }
+document.querySelectorAll('.pieces').forEach(part => {
+    part.addEventListener('dragstart', dragStart);
+    part.addEventListener('dragend', dragEnd);
+})
 
-    for (let i = 0; i <= 4; i++) {
-        const div = document.createElement("div");
-        div.classList.add("square");
-        div.classList.add("pecas");
-        right.appendChild(div);
-        div.setAttribute("draggable", "true")
-        for (let i = 0; i <= 1; i ++) {
-            const section = document.createElement("section")
-            div.appendChild(section);
-        }
-    }
-    functionPecas();
+document.querySelectorAll('.dropzone').forEach(dropzone => {
+    dropzone.addEventListener('dragover', dragOver);
+    dropzone.addEventListener('dragleave', dragLeave);
+    dropzone.addEventListener('drop', drop);
+})
+
+function dragStart(e) {
+    e.currentTarget.classList.add('is-dragging')
 }
 
+function dragEnd(e) {
+    e.currentTarget.classList.remove('is-dragging')
+}
 
+function dragOver(e) {
+    if (e.currentTarget.querySelector('.pieces') == null) {
+        e.preventDefault();
+        e.currentTarget.classList.add('hover');
+    }
+}
 
-function functionPecas() {
-    const pecas = document.querySelectorAll('.pecas');
-    console.log(pecas.length);
+function dragLeave(e) {
+    e.currentTarget.classList.remove('hover');
+}
 
-    pecas.forEach(peca => {
-        peca.addEventListener('dragstart', start);
-        peca.addEventListener('drag', indrag);
-        peca.addEventListener('dragend', end);
-    })
+function drop(e) {
+    e.currentTarget.classList.remove('hover');
 
-    const areas = document.querySelectorAll('.dropzone');
-    console.log(areas.length);
+    if (e.currentTarget.querySelector('.pieces') == null) {
+        let pieceBeingDragged = document.querySelector('.is-dragging')
+        pieceBeingDragged.setAttribute('draggable', 'false');
+        e.currentTarget.appendChild(pieceBeingDragged)
+
+        let piece = pieceBeingDragged.getAttribute('data-piece');
+        let col = e.currentTarget.getAttribute('data-col');
+        let row = e.currentTarget.getAttribute('data-row');
+
+        positions[row][col] = piece;
+        // console.table(positions)
+
+        selectPieces(piece)
+    }
+}
+
+function selectPieces(piece) {
+    var x = '';
+    var y = '';
+
+    if (piece == 1) {
+        // jogou com 1
+        // bloqueia o 1 libera o 2
+        x = document.getElementById('left');
+        y = document.getElementById('right');
+    }
     
-    areas.forEach(area => {
-        area.addEventListener('dragenter', enter);
-        area.addEventListener('dragover', over);
-        area.addEventListener('dragleave', leave);
-        area.addEventListener('drop', area);
+    if (piece == 2) {
+        // jogou com 2
+        // bloqueia o 2 libera o 1
+        y = document.getElementById('left');
+        x = document.getElementById('right');
+    }
+    
+    x.querySelectorAll('.pieces').forEach(piece => {
+        piece.setAttribute('draggable', 'false')
+        piece.setAttribute('disabled', 'true')
     })
-}
-
-function start() {
-    console.log("arrastou");
-    this.classList.add('is-dragging')
-}
-
-function indrag() {
-    // console.log("arrastando")
-}
-
-function end() {
-    console.log("parou")
-    this.classList.remove('is-dragging')
-}
-
-function enter(){
-    console.log("entrou")
-}
-
-function over(){
-    console.log("sobre")
-    const pecaSendoArrastado = document.querySelector('.is-dragging')
-    this.appendChild(pecaSendoArrastado)
-}
-
-function leave(){
-    console.log("saiu")
-}
-
-function area(){
-    console.log("soltou")
+    
+    y.querySelectorAll('.pieces').forEach(piece => {
+        piece.setAttribute('draggable', 'true')
+        piece.removeAttribute('disabled')
+    });
 }

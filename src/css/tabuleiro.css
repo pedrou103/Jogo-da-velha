@@ -1,38 +1,43 @@
 .content {
     display: flex;
-    width: 80%;
-    height: 90vh;
-    background-color: white;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px;
 }
 
 #left {
-    height: 100%;
-    width: 20%;
+    height: 500px;
+    width: 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
+    gap: 10px;
+    border-radius: 18px;
+    background: rgba(242, 245, 249, 0.20);
+    backdrop-filter: blur(2px);
 }
-
 #right {
-    height: 100%;
-    width: 20%;
+    height: 500px;
+    width: 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
+    gap: 10px;
+    border-radius: 18px;
+    background: rgba(242, 245, 249, 0.20);
+    backdrop-filter: blur(2px);
 }
 
-#center {
-    height: 100%;
-    width: 60%;
-    border: 1px solid black;
+#board {
+    width: 600px;
+    aspect-ratio: 1 / 1;
+    background: rgba(242, 245, 249, 0.20);
+    border-radius: 14px;
+    backdrop-filter: blur(2px);
+    padding: 18px;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
@@ -43,55 +48,64 @@
 
 .one{
     grid-area: one;
-    border-right: 3px solid black;
-    border-bottom: 3px solid black;
+    border-radius: 18px 0 0 0;
+    border-right: 1.5px solid var(--white);
+    border-bottom: 1.5px solid var(--white);
 }
 .two{
     grid-area: two;
-    border-left: 3px solid black;
-    border-bottom: 3px solid black;
-    border-right: 3px solid black;
+    border-left: 1.5px solid var(--white);
+    border-bottom: 1.5px solid var(--white);
+    border-right: 1.5px solid var(--white);
 }
 .tree{
     grid-area: tree;
-    border-left: 3px solid black;
-    border-bottom: 3px solid black;
+    border-radius: 0 18px 0 0;
+    border-left: 1.5px solid var(--white);
+    border-bottom: 1.5px solid var(--white);
 }
 .four{
     grid-area: four;
-    border-top: 3px solid black;
-    border-right: 3px solid black;
-    border-bottom: 3px solid black;
+    border-top: 1.5px solid var(--white);
+    border-right: 1.5px solid var(--white);
+    border-bottom: 1.5px solid var(--white);
 }
 .five{
     grid-area: five;
-    border: 3px solid black;
+    border: 1.5px solid var(--white);
 }
 .six{
     grid-area: six;
-    border-top: 3px solid black;
-    border-left: 3px solid black;
-    border-bottom: 3px solid black;
+    border-top: 1.5px solid var(--white);
+    border-left: 1.5px solid var(--white);
+    border-bottom: 1.5px solid var(--white);
 }
 .seven{
     grid-area: seven;
-    border-top: 3px solid black;
-    border-right: 3px solid black;
+    border-radius: 0 0 0 18px;
+    border-top: 1.5px solid var(--white);
+    border-right: 1.5px solid var(--white);
 }
 .eight{
     grid-area: eight;
-    border-left: 3px solid black;
-    border-top: 3px solid black;
-    border-right: 3px solid black;
+    border-left: 1.5px solid var(--white);
+    border-top: 1.5px solid var(--white);
+    border-right: 1.5px solid var(--white);
 }
 .nine{
     grid-area: nine;
-    border-left: 3px solid black;
-    border-top: 3px solid black;
+    border-radius: 0 0 18px 0;
+    border-left: 1.5px solid var(--white);
+    border-top: 1.5px solid var(--white);
 }
 
 .dropzone {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.hover {
+    transition: all 0.3s ease-in-out;
+    background: rgba(242, 245, 249, 0.30);
 }
